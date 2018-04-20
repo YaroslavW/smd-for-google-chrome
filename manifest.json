@@ -1,0 +1,36 @@
+{
+"name": "SMD Social Media Downloader",
+"version": "2.4",
+"manifest_version": 2,
+
+"web_accessible_resources" : [ "all.js" ],
+
+ "content_scripts": [
+    {
+      "matches": [ "https://www.facebook.com/*",
+      "https://m.facebook.com/*",
+      "https://www.instagram.com/*",
+      "https://plus.google.com/*",
+      "https://lh3.googleusercontent.com/*",
+      "https://twitter.com/*",
+      "https://mobile.twitter.com/*"
+    ],
+      "js": [ "all.js" ],
+       "run_at": "document_start"
+     
+    }
+  ],
+   "icons":{
+    
+    "48": "all_downloader_48.png"
+
+  },
+
+    "page_action": {
+        "default_title": "SMD",
+        "default_icon" : "all_downloader_48.png"
+         
+  
+
+        } 
+}
