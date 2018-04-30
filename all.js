@@ -4,6 +4,7 @@ document.addEventListener("keydown", function(e){
 
         var currentLocation = window.location.host;
 
+  
         function getFacebookUrl(){
          var x = window.location.href;
          location.href = x.replace(/www/,"m");
@@ -16,7 +17,31 @@ document.addEventListener("keydown", function(e){
          location.href=atr.src; 
        };
 
+function googlePlus(){
 
+  var iframe = document.querySelector('iframe');
+  if(!iframe){
+    var url = document.querySelector('img').src;
+    var fL = url.search( /\/w\d{3}/ );
+    
+    var shurl = url.substring(fL);
+
+    var lL = shurl.indexOf("w\/");
+    var c = url.substring((lL+1)+fL);
+    var a = url.substring(0,fL);
+
+    location.href  = a + c;
+  } else {
+var block =document.querySelector('content');
+var blocks = block.getElementsByTagName('*');
+for(var i = 0; i < blocks.length; i++){
+  if(blocks[i].hasAttribute('data-dlu')){
+    var src = blocks[i].getAttribute('data-dlu');
+    window.location.href = src;
+  }   
+}
+  }  
+}
 
 
       function getSrcInst(){
@@ -79,7 +104,10 @@ document.addEventListener("keydown", function(e){
       
 
     switch(currentLocation){
-
+      case 'lh3.googleusercontent.com':
+      case 'plus.google.com':  
+      googlePlus();
+      break;
       case 'www.instagram.com':
       getSrcInst();
       break;
