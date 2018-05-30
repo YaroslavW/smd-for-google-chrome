@@ -13,7 +13,9 @@
       "https://plus.google.com/*",
       "https://lh3.googleusercontent.com/*",
       "https://twitter.com/*",
-      "https://mobile.twitter.com/*"
+      "https://mobile.twitter.com/*",
+      "https://www.pornhub.com/*",
+      "http://www.pornhub.com/*"
     ],
       "js": [ "all.js" ],
        "run_at": "document_start"

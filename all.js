@@ -91,16 +91,18 @@ for(var i = 0; i < blocks.length; i++){
 
     }
     };
-
     function twitterMob(){
-      var bl = document.getElementById('react-root')
-      var sources = bl.querySelectorAll('source');
-      for(var i = 0; i < sources.length; i++){
-        var src = sources[1].src;
-      }
-     
-      window.location.href = src;
+      var bl = document.getElementById('react-root');
+      var img = bl.getElementsByTagName('video');
+      var src;
+        for(var i = 0; i < img.length; i++){
+          if(img[i].hasAttribute('type') && img[i].getAttribute('type')=='video/mp4') {
+              src = img[i].src;
+              window.location.href = src;
+          }
+        }
       };
+
       
 
     switch(currentLocation){
